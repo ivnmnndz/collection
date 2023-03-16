@@ -1,0 +1,26 @@
+<%= form_with model:custom_card do |form| %>
+  <div>
+    <%= form.label :card_name %><br/>
+    <%= form.text_field :card_name %>
+    <% custom_card.errors.full_messages_for(:card_name).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :card_image %><br/>
+    <%= form.text_field :card_image %>
+    <% custom_card.errors.full_messages_for(:card_image).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :card_text %><br/>
+    <%= form.text_area :card_text %>
+    <% custom_card.errors.full_messages_for(:card_text).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Custom Cards</h1>
+<ul>
+  <% @custom_cards.each do |custom_card| %>
+    <li>
+      <%= link_to custom_card.card_name, custom_card %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Custom Card", new_custom_card_path %>

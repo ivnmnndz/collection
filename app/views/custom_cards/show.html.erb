@@ -1,0 +1,24 @@
+<h1><%= @custom_card.card_name %></h1>
+<img src="<%= @custom_card.card_image %>" />
+<p><%= @custom_card.card_text %></p>
+<br/>
+<ul>
+  <li>
+    <%= link_to "Edit", edit_custom_card_path(@custom_card) %>
+  </li>
+  <li>
+    <%= link_to "Destroy", custom_card_path(@custom_card), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </li>
+  <li>
+    <%= link_to "Back Home", root_path %>
+  </li>
+</ul>
+<br/>
+<h2>Comments</h2>
+<%= render @custom_card.comments %>
+<br/>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
